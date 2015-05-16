@@ -8,7 +8,7 @@
 		if(empty($user) or empty($pass) or empty($email)){
 			echo "rellene los formularios";
 		}else{
-			$result = $conx->query('SELECT * FROM users WHERE usuario="$user" or email="$email"');
+			$result = $conx->query('SELECT * FROM users WHERE usuario="'.$user.'" or email="'.$email.'"');
 
 			$num = $result->fetch_array(MYSQLI_ASSOC);
 				
@@ -18,7 +18,7 @@
 				if($email == $num['email']){
 					echo "ese email ya esta siendo usado";
 				}else{
-					$conx->query('INSERT INTO users(usuario,clave,email) VALUES("$user","$pass","$email")');
+					$conx->query('INSERT INTO users(usuario,clave,email) VALUES("'.$user.'","'.$pass.'","'.$email.'")');
 					echo "Enviado";
 				}
 			}
@@ -33,7 +33,7 @@
 		if(empty($user) or empty($pass)){
 			echo "<span id='notificacion' class='error'>estan vacio los formularios</span>";
 		}else{
-			$result = $conx->query('SELECT * FROM users WHERE usuario="$user" AND clave="$pass"');
+			$result = $conx->query('SELECT * FROM users WHERE usuario="'.$user.'" AND clave="'.$pass.'"');
 			$num = $result->fetch_array(MYSQLI_ASSOC);
 				
 			if($user == $num['usuario'] ){
