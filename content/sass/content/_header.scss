@@ -1,0 +1,30 @@
+header{
+        @include display(flex);
+        @include justify-content(space-between);
+
+        h1, nav{
+            @include align-self(flex-end);
+        }
+        h1{
+            font-size: 45px;
+            color: $rojo;
+        }
+        nav{
+            
+            ul{
+                list-style: none;
+
+                li{
+                    display: inline-block;
+
+                    a{
+                        display: inline-block;
+                        color: white;
+                        text-decoration: none;
+                        background: rgba(208,95,95,1);
+                        padding: 5px;
+                    }
+                }
+            }
+        }
+    }

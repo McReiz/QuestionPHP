@@ -1,0 +1,18 @@
+/* Variables y extras */
+@import "bourbon/bourbon";
+
+@import "content/varmixin";
+$rojo: rgba(208,95,95,1);
+
+body{
+    background: rgba(217,200,197,1);
+}
+#wrapper{
+    background: rgba(255,255,250,1);
+    width: 980px;
+    margin: 0 auto;
+    padding: 10px;
+
+    @import "content/header";
+    @import "content/body";
+}
