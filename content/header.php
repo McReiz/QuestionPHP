@@ -3,8 +3,12 @@
 	if(class_exists('configGlobal')){
 		$configGlobal = new configGlobal('config');
 		$titulo = $configGlobal->getConfig('titulo');
+		$eslogan = $configGlobal->getConfig('eslogan');
+		$tags = $configGlobal->getConfig('tags');
 	}else{
 		$titulo = NULL;
+		$eslogan = NULL;
+		$tags = NULL;
 	}
 ?>
 <!DOCTYPE html>
@@ -16,8 +20,8 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<META NAME="AUTHOR" CONTENT="el Reiz">
-	<META NAME="DESCRIPTION" CONTENT="Descripcion de la pagina">
-	<META NAME="KEYWORDS" CONTENT="Tags,uno,dos,tres">
+	<META NAME="DESCRIPTION" CONTENT="<?php echo $eslogan ?>">
+	<META NAME="KEYWORDS" CONTENT="<?php echo $tags ?>">
 	<META NAME="robots" content="ALL">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
