@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include('./include/class.php');
 	$result = $conx->query("SELECT * FROM users");
 	

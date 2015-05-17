@@ -1,14 +1,18 @@
-<section class="content">
-	<form action="crear-form">
-		<div id="resultado"></div>
-		<div class="form">
-			<div class="lab">
-				<label for="titulo">Titulo de pregunta: </label><div class="titulo"><input type="text" name="pregunta">
+<section id="content" class="content">
+	<form id="form" action="validar.php" class="pregunta" method="post">
+		<div class="resultado"></div>
+		<div class="inputs">
+			<div id="lab">
+				<label for="titulo">Titulo de pregunta: </label>
+				<div class="input"><input id="titulo" type="text" name="pregunta"></div>
 			</div>
-			<div class="lab">
-				<label for="descripcion">Descripcion: </label><textarea id="descripcion"></textarea>
+			<div id="lab">
+				<label for="descripcion">Descripcion: </label>
+				<textarea id="descripcion" name="descripcion"></textarea>
 			</div>
 		</div>
+		<input type="hidden" name="preguntar" value="1">
+		<input type="submit" value="Preguntar">
 	</form>
 </section>
 <?php include('aside.php') ?>

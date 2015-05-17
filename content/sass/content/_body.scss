@@ -12,13 +12,13 @@ section{
         display: inline-block;
         margin: 10px;
     }
-    #login{
+    #form{
         width: 450px;
         margin: 0 auto;
         padding: 10px;
         @include box-sizing(border-box);
 
-        .login{
+        .inputs{
             display: table;
             @include box-sizing(border-box);
             $size: 25px;

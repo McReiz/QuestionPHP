@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 		
-		$('#login').submit(function(event){
+		$('#form').submit(function(event){
 			event.preventDefault();
 			var url = $(this).attr('action');
 			var dataVa = $(this).serialize();

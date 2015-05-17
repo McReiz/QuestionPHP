@@ -1,7 +1,7 @@
 <section id="content">
-	<form id="login" action="validar.php" method="post">
+	<form id="form" action="validar.php" method="post">
 		<div class="resultado"></div>
-		<div class="inputs login">
+		<div class="inputs">
 			<div id="lab">
 				<label for="Usuario">Usuario: </label>
 				<div class="input"><input id="Usuario" type="text" name="usuario" placeholder="Tu usuario"></div>
