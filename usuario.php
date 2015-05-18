@@ -16,19 +16,19 @@
 		echo "<b style='font-weight:bold;'>{$num['usuario']}</b><br />"; 
 
 
-		$consulta = "SELECT * FROM preguntas WHERE creador='".$num['usuario']."'";
+		$consulta = "SELECT * FROM preguntas WHERE creador='".$num['usuario']."' ORDER BY id ASC";
 		$result = $conx->query($consulta);
-		$pregunta = $result->fetch_array(MYSQLI_ASSOC);
+		$preguntas = $result->num_rows;
 		
-		if($pregunta){
+		if($preguntas > 0){
+			echo "tiene <b style='font-weight:bold;'>$preguntas</b> preguntas<br>";
 			while ($pregunta = $result->fetch_array(MYSQLI_ASSOC)) {
-				echo $pregunta['titulo'];
-			}
+				echo "<br>{$pregunta['titulo']}<br>";
+			};
 		}else{
 			echo "no se registro nada";
 		}
-		
-
+		$result->close();
 	}
 	include('./content/footer.php');
 
