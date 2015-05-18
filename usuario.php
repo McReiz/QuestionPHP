@@ -3,7 +3,7 @@
 	include('./include/class.php');
 
 	include('./content/header.php');
-	include('./content/footer.php');
+	
 
 	if(empty($_GET["id"])){
 		echo "no se a encontrado ningun usuario";
@@ -13,15 +13,23 @@
 
 		$num = $result->fetch_array(MYSQLI_ASSOC);
 		
-		echo $num['usuario']; 
+		echo "<b style='font-weight:bold;'>{$num['usuario']}</b><br />"; 
 
-		echo "<b /> Su preguntas: <b />";
-		$result = $conx->query("SELECT * FROM preguntas WHERE creador='".$num['usuario']."'");
+
+		$consulta = "SELECT * FROM preguntas WHERE creador='".$num['usuario']."'";
+		$result = $conx->query($consulta);
+		$pregunta = $result->fetch_array(MYSQLI_ASSOC);
 		
-		while($num2 = $result->fetch_array(MYSQLI_ASSOC)){
-			echo $num2['titulo']."<br />";
+		if($pregunta){
+			while ($pregunta = $result->fetch_array(MYSQLI_ASSOC)) {
+				echo $pregunta['titulo'];
+			}
+		}else{
+			echo "no se registro nada";
 		}
 		
+
 	}
+	include('./content/footer.php');
 
 ?>

@@ -60,19 +60,14 @@
 		session_start();
 		if(isset($_SESSION['id'])){
 			$pregunta = htmlspecialchars($_POST['pregunta']);
-			echo "<br />".$pregunta;
 			$descripcion = htmlspecialchars($_POST['descripcion']);
-			echo "<br />".$descripcion;
 			$usuario = $_SESSION['usuario'];
-			echo "<br />".$usuario;
 
 			if(empty($pregunta) or empty($descripcion)){
 				echo "<span id='notificacion' class='error'>Rellene el formulario</span>";
 			}else{
-
 				$conx->query('INSERT INTO preguntas(titulo,descripcion,creador) VALUES("'.$pregunta.'","'.$descripcion.'","'.$usuario.'")');
 				echo "<span id='notificacion' class='success'>Su pregunta a sido publicada</span>";
-				echo "<br />".$pregunta;
 			}
 		}
 	}

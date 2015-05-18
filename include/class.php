@@ -1,7 +1,6 @@
 <?php
 	include('config.php');
 	
-	
 	/**
 	* configuracion global
 	*/
@@ -28,5 +27,4 @@
 			}
 		}
 	}
-	
 ?>
