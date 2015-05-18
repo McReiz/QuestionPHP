@@ -6,28 +6,30 @@
 	
 
 	if(empty($_GET["id"])){
-		echo "no se a encontrado ningun usuario";
+		header('location: usuarios.php');
 	}else{
-		$id = $_GET["id"];
-		$result = $conx->query("SELECT * FROM users WHERE id=".$id."");
-
+		$id = htmlentities($_GET["id"]);
+		$result = $conx->query("SELECT * FROM users WHERE id='".$id."'");
 		$num = $result->fetch_array(MYSQLI_ASSOC);
-		
-		echo "<b style='font-weight:bold;'>{$num['usuario']}</b><br />"; 
 
+		if($num['id'] == $id){
+			$validar = true;
+			$usuario = $num['usuario'];
+			$query = "SELECT * FROM preguntas WHERE creador='".$usuario."'";
+			$result = $conx->query($query);
+			$preguntas_n = $result->num_rows;
 
-		$consulta = "SELECT * FROM preguntas WHERE creador='".$num['usuario']."' ORDER BY id ASC";
-		$result = $conx->query($consulta);
-		$preguntas = $result->num_rows;
-		
-		if($preguntas > 0){
-			echo "tiene <b style='font-weight:bold;'>$preguntas</b> preguntas<br>";
-			while ($pregunta = $result->fetch_array(MYSQLI_ASSOC)) {
-				echo "<br>{$pregunta['titulo']}<br>";
-			};
+			if($preguntas_n > 0){
+				$validar_p = true;
+			}else{
+				$validar_p = false;
+			}
+
 		}else{
-			echo "no se registro nada";
+			$validar = false;
+			$mensaje = "El usuario que esta intentando buscar no existe";
 		}
+		include('./content/usuario.php');
 		$result->close();
 	}
 	include('./content/footer.php');
