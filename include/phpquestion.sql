@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-05-2015 a las 07:10:56
+-- Tiempo de generación: 19-05-2015 a las 07:34:44
 -- Versión del servidor: 5.6.24
 -- Versión de PHP: 5.5.24
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `sinnombre`
+-- Base de datos: `phpquestion`
 --
 
 -- --------------------------------------------------------
@@ -43,6 +43,28 @@ INSERT INTO `config` (`id`, `titulo`, `eslogan`, `tags`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `preguntas`
+--
+
+CREATE TABLE IF NOT EXISTS `preguntas` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `descripcion` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `creador` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `preguntas`
+--
+
+INSERT INTO `preguntas` (`id`, `titulo`, `descripcion`, `creador`) VALUES
+(10, 'CoÃ±o query', 'verga nojoda\r\n', 'McReiz'),
+(11, 'Este es el titulo', 'entonces escribo paja y media sin que tenga sentido y lo publico', 'McReiz'),
+(12, 'vergaa ', 'funcioona\r\n', 'root');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `users`
 --
 
@@ -51,7 +73,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `usuario` varchar(15) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `clave` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `email` varchar(35) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `usuario`, `clave`, `email`) VALUES
+(1, 'McReiz', 'Reiz123on', 'xreizonx@gmail.com'),
+(2, 'admin', 'Reiz123on', 'sasasa@gmail.com'),
+(3, 'root', 'Reiz', 'xxreizxx2@gmail.com'),
+(4, 'root2', 'Reiz', 'xreizdaonx@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -61,6 +93,12 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Indices de la tabla `config`
 --
 ALTER TABLE `config`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `preguntas`
+--
+ALTER TABLE `preguntas`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -79,10 +117,15 @@ ALTER TABLE `users`
 ALTER TABLE `config`
   MODIFY `id` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT de la tabla `preguntas`
+--
+ALTER TABLE `preguntas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+--
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
