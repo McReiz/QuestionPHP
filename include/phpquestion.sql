@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-05-2015 a las 07:34:44
+-- Tiempo de generación: 19-05-2015 a las 07:37:08
 -- Versión del servidor: 5.6.24
 -- Versión de PHP: 5.5.24
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `config` (
 --
 
 INSERT INTO `config` (`id`, `titulo`, `eslogan`, `tags`) VALUES
-(1, 'questionphp', 'Preguntas y te responderan', 'Php, script, question, suggetions');
+(1, 'QuestionPHP', 'Preguntas y te responderan', 'Php, script, question, suggetions');
 
 -- --------------------------------------------------------
 
