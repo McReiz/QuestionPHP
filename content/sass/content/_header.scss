@@ -8,6 +8,7 @@ header{
         h1{
             font-size: 45px;
             color: $rojo;
+            margin: 15px 0 10px 10px;
         }
         nav{
             
@@ -21,8 +22,12 @@ header{
                         display: inline-block;
                         color: white;
                         text-decoration: none;
-                        background: rgba(208,95,95,1);
+                        background: $rojo;
                         padding: 5px;
+
+                        &:hover{
+                            background: $azul;
+                        }
                     }
                 }
             }

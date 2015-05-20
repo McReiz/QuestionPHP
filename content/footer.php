@@ -1,6 +1,6 @@
 
 
-			
+	</main>
 	<footer>Copyright &copy; Todos los derechos reservados por <?php echo $titulo; ?></footer>
 </div>
 </body>

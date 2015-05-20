@@ -3,16 +3,20 @@
 
 @import "content/varmixin";
 $rojo: rgba(208,95,95,1);
-
+$fondo: rgba(255,255,250,1);
+$azul: rgba(102,175,181,1);
 body{
     background: rgba(217,200,197,1);
 }
 #wrapper{
-    background: rgba(255,255,250,1);
     width: 980px;
     margin: 0 auto;
-    padding: 10px;
 
+    header, footer{
+    	background: $fondo;
+    	padding: 5px;
+    	margin: 5px;
+    }
     @import "content/header";
     @import "content/body";
 }

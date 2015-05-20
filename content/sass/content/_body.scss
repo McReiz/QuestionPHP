@@ -1,71 +1,133 @@
-section{
+main{
+    @include display(flex);
+    @include justify-content(space-between);
 
-    a{
-        color: $rojo;
-    }
-    h2{
-        background: $rojo;
-        color: white;
-        font-weight: bold;
-        font-size: 19px;
-        padding: 5px;
-        display: inline-block;
-        margin: 10px;
-    }
-    #form{
-        width: 450px;
-        margin: 0 auto;
-        padding: 10px;
+    section, aside{
+        @include align-self(flex-start);
         @include box-sizing(border-box);
-
-        .inputs{
-            display: table;
+        margin: 5px;
+        padding: 5px;
+        background: $fondo;
+    }
+    section{
+        width: 100%;
+        
+        a{
+            color: $rojo;
+        }
+        h2{
+            background: $rojo;
+            color: white;
+            font-weight: bold;
+            font-size: 19px;
+            padding: 5px;
+            display: inline-block;
+            margin: 5px;
+        }
+        #form{
+            width: 450px;
+            margin: 0 auto;
+            padding: 10px;
             @include box-sizing(border-box);
-            $size: 25px;
-            margin: 15px 0 15px 0;
-            #lab{
-                display: table-row;
-                height: 40px;
 
-                label, .input{
-                    @include box-sizing(border-box);
-                    display: table-cell;
-                    vertical-align: middle;
-                }
+            .inputs{
+                display: table;
+                @include box-sizing(border-box);
+                $size: 25px;
+                margin: 15px 0 15px 0;
+                #lab{
+                    display: table-row;
+                    height: 40px;
 
-                label{  
-                    text-align: right;
-                    font-size: $size;
-                }
-                .input{
-                    width:100%;
-                    input{
+                    label, .input{
                         @include box-sizing(border-box);
-                        display: inline-block;
-                        width: 100%;
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+
+                    label{  
+                        text-align: right;
                         font-size: $size;
+                    }
+                    .input{
+                        width:100%;
+                        input{
+                            @include box-sizing(border-box);
+                            display: inline-block;
+                            width: 100%;
+                            font-size: $size;
+                        }
                     }
                 }
             }
-        }
-        .resultado{
-            display: block;
-
-            .error, .success{
+            .resultado{
                 display: block;
-                font-size: 15px;
-                padding: 5px;
-                border-radius: 5px;
-                border: 1px solid rgba(255,255,255,.2);
-                color: white;
-                font-weight:bold;
-            }
-            .error{
-                background: rgba(245,0,19,1);
-            }
-            .success{
-                background: rgba(102,175,181,1);
+
+                .error, .success{
+                    display: block;
+                    font-size: 15px;
+                    padding: 5px;
+                    border-radius: 5px;
+                    border: 1px solid rgba(255,255,255,.2);
+                    color: white;
+                    font-weight:bold;
+                }
+                .error{
+                    background: rgba(245,0,19,1);
+                }
+                .success{
+                    background: $azul;
+                }
             }
         }
+        &.left{
+            width: 70%;
+            padding: 5px;
+            margin: 0px;
+            background: transparent;
+            article{
+
+                background: $fondo;
+                margin-bottom: 10px;
+
+                h2{
+                    margin: 0px;
+                    padding: 0px;
+                    font-size: 12px;
+                    background: transparent;
+                    display: block;
+
+                    a{
+                        color: white;
+                        background: $rojo;
+                        display: block;
+                        padding: 5px 0px 3px 10px;
+                        text-decoration: none;
+                        font-size: 25px;
+                        border-bottom: 5px solid rgba(0,0,0,.05);
+
+                        &:hover{
+                            background: $azul;
+                        }
+                    }
+                }
+                .descripcion, .datos{
+                    display: block;
+                    text-align: justify;
+                    padding: 5px;
+                }
+                .descripcion{
+                    color: rgba(0,0,0,.65);
+                    font-size: 17px;
+                }
+                .datos{
+                    color: $azul;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    aside{
+        width: 30%;
     }
 }
