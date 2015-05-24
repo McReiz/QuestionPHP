@@ -11,12 +11,6 @@
 	// contamos cuantas tablas hay en nuestra base de datos
 	$count = $result->num_rows;
 
-	// PAGINACION
-
-	// establecemos una variable limite
-	$limite = 5;
-	
-	// verificamos si existe algun $_GET
 
 	// si la cantidad es mayor o igual a 1 nos convertira la varible $validar en true
 	if($count >= 1){
@@ -27,7 +21,8 @@
 		$mensaje = "Su sitio no tiene ninguna pregunta por ahora";
 	}
 
-
+	// PAGINACION
+	// verificamos si existe algun $_GET
 	if(isset($_GET['pag'])){
 		$pagina = htmlentities($_GET['pag']);
 	}else{
@@ -40,6 +35,8 @@
 	}else{
 		$inicio = ($pagina-1) * $limite;
 	}
+	// establecemos una variable limite
+	$limite = 5;
 	$total = ceil( $count / $limite);
 
 	if($total > 1){
@@ -49,8 +46,7 @@
 	}
 	$query = "SELECT *FROM preguntas ORDER BY id DESC LIMIT ".$inicio.",".$limite."";
 	$result = $conx->query($query);
-
-
+	
 	include('./content/home.php');
 	include('./content/footer.php');
 	$result->close();
