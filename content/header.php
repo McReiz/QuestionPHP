@@ -1,6 +1,6 @@
 <?php 
 	if(class_exists('configGlobal')){
-		$configGlobal = new configGlobal('config');
+		$configGlobal = new configGlobal();
 		$titulo = $configGlobal->getConfig('titulo');
 		$eslogan = $configGlobal->getConfig('eslogan');
 		$tags = $configGlobal->getConfig('tags');
