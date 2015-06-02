@@ -11,9 +11,9 @@ $(document).ready(function(){
 				data: dataVa,
 				success: function (mensaje) {
 					$(".resultado").html(mensaje);
-					var span = $('#notificacion').attr('class');
+					var vericidad = $('#notificacion').attr('class');
 					
-					if(span == "success"){
+					if(vericidad == "success"){
 						setTimeout(function(){
 							window.location = "index.php";
 						},1500);

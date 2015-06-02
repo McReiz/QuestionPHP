@@ -36,19 +36,15 @@
 			$result = $conx->query('SELECT * FROM users WHERE usuario="'.$user.'" AND clave="'.$pass.'"');
 			$num = $result->fetch_array(MYSQLI_ASSOC);
 				
-			if($user == $num['usuario'] ){
+			if($user == $num['usuario'] && $pass == $num['clave']){
+				session_start(); 
 
-				if($pass == $num['clave']){
+				$_SESSION['id'] = $num['id'];
+				$_SESSION['usuario'] = $num['usuario'];
+				$_SESSION['email'] = $num['email'];
 
-					session_start(); 
-
-					$_SESSION['id'] = $num['id'];
-					$_SESSION['usuario'] = $num['usuario'];
-					$_SESSION['email'] = $num['email'];
-
-					echo "<span id='notificacion' class='success'>Usted se a conectado exitosamente</span>";
-
-				}
+				echo "<span id='notificacion' class='success'>Usted se a conectado exitosamente</span>";
+			
 			}else{
 				echo "<span id='notificacion' class='error'>la clave o el usuario estan equivocados</span>";
 			}

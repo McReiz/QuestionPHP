@@ -1,3 +1,8 @@
+<?php 
+	if(!class_exists('configGlobal')){
+		header('location: ../index.php');
+	}
+?>
 <section id="left">
 	<?php if($validar == true){ ?>
 		<div class="perfil">

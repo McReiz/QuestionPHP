@@ -1,14 +1,11 @@
 <?php 
-	if(class_exists('configGlobal')){
-		$configGlobal = new configGlobal();
-		$titulo = $configGlobal->getConfig('titulo');
-		$eslogan = $configGlobal->getConfig('eslogan');
-		$tags = $configGlobal->getConfig('tags');
-	}else{
-		$titulo = NULL;
-		$eslogan = NULL;
-		$tags = NULL;
+	if(!class_exists('configGlobal')){
+		header('location: ../index.php');
 	}
+	$configGlobal = new configGlobal();
+	$titulo = $configGlobal->getConfig('titulo');
+	$eslogan = $configGlobal->getConfig('eslogan');
+	$tags = $configGlobal->getConfig('tags');
 ?>
 <!DOCTYPE html>
 <html lang="es">

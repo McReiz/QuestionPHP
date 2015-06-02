@@ -1,3 +1,8 @@
+<?php 
+	if(!class_exists('configGlobal')){
+		header('location: ../index.php');
+	}
+?>
 <section id="content" class="content">
 	<form id="form" action="validar.php" class="pregunta" method="post">
 		<div class="resultado"></div>

@@ -1,3 +1,8 @@
+<?php 
+	if(!class_exists('configGlobal')){
+		header('location: ../index.php');
+	}
+?>
 	<section>
 		<h2>Usuarios registrados:</h2>
 		<?php

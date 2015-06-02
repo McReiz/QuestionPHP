@@ -1,4 +1,8 @@
-
+<?php 
+	if(!class_exists('configGlobal')){
+		header('location: ../index.php');
+	}
+?>
 
 	</main>
 	<footer>Copyright &copy; Todos los derechos reservados por <?php echo $titulo; ?></footer>
