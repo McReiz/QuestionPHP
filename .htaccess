@@ -1,0 +1,8 @@
+#Options +FollowSymLinks
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /QuestionPHP/
+RewriteRule ^inicio$ index.php
+RewriteRule ^inicio/(.*)/$ index.php?pag=$1
+RewriteRule ^usuarios$ usuarios.php
+</IfModule>

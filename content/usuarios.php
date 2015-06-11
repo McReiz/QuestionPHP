@@ -6,6 +6,8 @@
 	<section>
 		<h2>Usuarios registrados:</h2>
 		<?php
+			$result = $result->getList();
+			
 			while($num = $result->fetch_array(MYSQLI_ASSOC)){
 				?>
 					<p>

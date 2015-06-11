@@ -50,7 +50,6 @@
 	$query = "SELECT *FROM preguntas ORDER BY id DESC LIMIT ".$inicio.",".$limite."";
 	$result = $conx->query($query);
 
-
 	include('./content/home.php');
 	include('./content/footer.php');
 	$result->close();

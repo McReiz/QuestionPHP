@@ -11,8 +11,6 @@
 <html lang="es">
 <head>
 	<title><?php echo $titulo ?></title>
-	<link rel="stylesheet" type="text/css" href="./content/estilos/resets.css">
-	<link rel="stylesheet" type="text/css" href="./content/estilos/style.css">
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<META NAME="AUTHOR" CONTENT="el Reiz">
@@ -20,6 +18,9 @@
 	<META NAME="KEYWORDS" CONTENT="<?php echo $tags ?>">
 	<META NAME="robots" content="ALL">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="<?php echo url ?>/content/estilos/resets.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url ?>/content/estilos/style.css">
 
 </head>
 <body>
@@ -29,10 +30,10 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="index.php">Inicio</a>
+					<a href="<?php echo url ?>/inicio">Inicio</a>
 				</li>
 				<li>
-					<a href="usuarios.php">Usuarios</a>
+					<a href="<?php echo url ?>/usuarios">Usuarios</a>
 				</li>
 				<?php if(isset($_SESSION['usuario'])){ ?>
 					<li>

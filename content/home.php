@@ -8,7 +8,7 @@
 		
 		$filtreoTexto = new filtreoTexto();
 	?>
-	<?php if($validar = true){
+	<?php if($validar == true){
 		while($preg = $result->fetch_array(MYSQLI_ASSOC)){ ?>
 		
 		<article>
@@ -21,7 +21,7 @@
 		<?php } 
 			if($pagi == true){ 
 				for( $i=1; $i<=$total; $i++){
-					echo "<a href='?pag=$i'>$i</a>";
+					echo "<a href='".url."/inicio/$i/'>$i</a>";
 				}
 			 }
 		}else{
