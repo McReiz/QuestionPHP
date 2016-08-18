@@ -53,15 +53,6 @@ CREATE TABLE IF NOT EXISTS `preguntas` (
   `creador` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `preguntas`
---
-
-INSERT INTO `preguntas` (`id`, `titulo`, `descripcion`, `creador`) VALUES
-(10, 'CoÃ±o query', 'verga nojoda\r\n', 'McReiz'),
-(11, 'Este es el titulo', 'entonces escribo paja y media sin que tenga sentido y lo publico', 'McReiz'),
-(12, 'vergaa ', 'funcioona\r\n', 'root');
-
 -- --------------------------------------------------------
 
 --
@@ -74,16 +65,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   `clave` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `email` varchar(35) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `users`
---
-
-INSERT INTO `users` (`id`, `usuario`, `clave`, `email`) VALUES
-(1, 'McReiz', 'Reiz123on', 'xreizonx@gmail.com'),
-(2, 'admin', 'Reiz123on', 'sasasa@gmail.com'),
-(3, 'root', 'Reiz', 'xxreizxx2@gmail.com'),
-(4, 'root2', 'Reiz', 'xreizdaonx@gmail.com');
 
 --
 -- Índices para tablas volcadas
